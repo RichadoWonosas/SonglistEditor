@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider_tairitsu_light"
+        android:minHeight="45sp"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:showDividers="middle|beginning|end">
+
+        <include
+            android:id="@+id/editID"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editTitle"
+            layout="@layout/content_edit_localized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editArtist"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editArtistLocalized"
+            layout="@layout/content_edit_localized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBPM"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBPMBase"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editSet"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editPurchase"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editAudioPreview"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editAudioPreviewEnd"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editSide"
+            layout="@layout/content_edit_choice"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBG"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBGDaynight"
+            layout="@layout/content_edit_daynight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <include
+                android:id="@+id/editDate"
+                layout="@layout/content_edit_single"
+                android:layout_width="0dp"
+                android:layout_height="45sp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:minHeight="45sp" />
+
+            <ImageButton
+                android:id="@+id/editDateWindow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/tairitsuLight"
+                android:contentDescription="@string/description_edit_date"
+                app:srcCompat="@drawable/icon_normal_edit_calendar" />
+
+        </TableRow>
+
+        <include
+            android:id="@+id/editVersion"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editWorldUnlock"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editRemoteDL"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBYDLocalUnlock"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editSonglistHidden"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editNoPP"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editSource"
+            layout="@layout/content_edit_localized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editSourceCopyright"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editPast"
+            layout="@layout/content_edit_difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editPresent"
+            layout="@layout/content_edit_difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editFuture"
+            layout="@layout/content_edit_difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+
+        <include
+            android:id="@+id/editBeyond"
+            layout="@layout/content_edit_difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:minHeight="45sp" />
+    </LinearLayout>
+</ScrollView>

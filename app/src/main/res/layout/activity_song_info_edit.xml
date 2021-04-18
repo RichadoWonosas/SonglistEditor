@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SongInfoEditActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tairitsuLight"
+            android:backgroundTint="@color/tairitsuLight"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/editBackButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:backgroundTint="@color/tairitsuLight"
+                    android:clickable="true"
+                    android:contentDescription="@string/selection_back"
+                    android:focusable="true"
+                    android:onClick="onClickBackButton"
+                    android:padding="12dp"
+                    android:scaleType="centerCrop"
+                    android:theme="@style/Ripple"
+                    app:srcCompat="@drawable/icon_normal_back" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/editToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:background="?attr/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:minHeight="56dp"
+                    app:contentInsetStart="0dp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </TableRow>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/editSingle"
+            layout="@layout/content_edit_song" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

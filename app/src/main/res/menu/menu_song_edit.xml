@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemSaveSongInfo"
+        android:icon="@drawable/icon_menu_save"
+        android:title="@string/text_save_button"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itemExportSongInfo"
+        android:icon="@drawable/icon_menu_export"
+        android:title="@string/selection_export"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itemSwitchSeldomUsed"
+        android:icon="@drawable/icon_menu_visible"
+        android:title="@string/selection_show_seldom_used"
+        app:showAsAction="never" />
+</menu>

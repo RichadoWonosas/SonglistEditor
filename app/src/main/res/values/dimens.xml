@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="default_fab_margin">16dp</dimen>
+    <dimen name="default_fab_margin_small">24dp</dimen>
+    <dimen name="default_text_margin">44dp</dimen>
+    <dimen name="text_expand_margin">-36dp</dimen>
+    <dimen name="fab_margin_single">-64dp</dimen>
+    <dimen name="fab_margin_single_small">-56dp</dimen>
+    <dimen name="fab_decelerating_distance">56dp</dimen>
+    <dimen name="height_parts">45sp</dimen>
+</resources>

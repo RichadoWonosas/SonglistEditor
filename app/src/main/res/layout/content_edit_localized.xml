@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/editTitleLocalized"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/default_edit_title" />
+
+    <LinearLayout
+        android:id="@+id/editContentLocalized"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:inputType="textPersonName"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/editButtonExpandLocalized"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:backgroundTint="@color/tairitsuLight"
+            android:minHeight="45sp"
+            android:textColor="@android:color/white" />
+
+        <include
+            android:id="@+id/editEn"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/editJa"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/editZhHans"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/editZhHant"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/editKo"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</TableRow>

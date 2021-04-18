@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/editTitleDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/default_edit_title" />
+
+    <LinearLayout
+        android:id="@+id/editContentDifficulty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/editButtonExpandDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:backgroundTint="@color/tairitsuLight"
+            android:minHeight="45sp"
+            android:textColor="@android:color/white" />
+
+        <include
+            android:id="@+id/editAvailable"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editChartDesigner"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editJacketDesigner"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editRating"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editRatingPlus"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editJacketNight"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editJacketOverride"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editHiddenUntilUnlocked"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editBackground"
+            layout="@layout/content_edit_single"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+
+        <include
+            android:id="@+id/editWorldUnlock"
+            layout="@layout/content_edit_check"
+            android:layout_width="match_parent"
+            android:layout_height="45sp" />
+    </LinearLayout>
+</TableRow>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SelectSongActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tairitsuLight"
+        android:backgroundTint="@color/tairitsuLight"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:backgroundTint="@color/tairitsuLight"
+                android:clickable="true"
+                android:contentDescription="@string/selection_back"
+                android:focusable="true"
+                android:onClick="onClickReturnButton"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:theme="@style/Ripple"
+                app:srcCompat="@drawable/icon_normal_back" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarSelectSong"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="start|center_vertical"
+                android:background="?attr/colorPrimary"
+                android:gravity="center_vertical"
+                android:minHeight="56dp"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageButton
+                    android:id="@+id/sortButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:backgroundTint="@color/tairitsuLight"
+                    android:clickable="true"
+                    android:contentDescription="@string/selection_back"
+                    android:focusable="true"
+                    android:onClick="onClickSortButton"
+                    android:padding="12dp"
+                    android:scaleType="centerCrop"
+                    android:theme="@style/Ripple"
+                    app:srcCompat="@drawable/icon_normal_sort" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </TableRow>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_select_song" />
+
+    <ImageView
+        android:id="@+id/backgroundWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:clickable="true"
+        android:contentDescription="@string/description_white_background"
+        android:focusable="true"
+        android:onClick="onClickBackgroundWhite"
+        app:srcCompat="@android:color/background_light" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addSongButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/default_fab_margin_small"
+        android:onClick="onClickAddSongButton"
+        app:backgroundTint="@color/hikariLight"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/icon_normal_add" />
+
+    <TextView
+        android:id="@+id/textAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/default_text_margin"
+        android:layout_marginBottom="@dimen/default_fab_margin_small"
+        android:gravity="center_vertical|end"
+        android:text="@string/text_add_button"
+        android:textAlignment="gravity"
+        android:textColor="@color/hikariLight"
+        android:textSize="14sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/importSongButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/default_fab_margin_small"
+        android:onClick="onClickImportSongButton"
+        app:backgroundTint="@color/hikariLight"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/icon_normal_import" />
+
+    <TextView
+        android:id="@+id/textImport"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/default_text_margin"
+        android:layout_marginBottom="@dimen/default_fab_margin_small"
+        android:gravity="center_vertical|end"
+        android:text="@string/text_import_button"
+        android:textAlignment="gravity"
+        android:textColor="@color/hikariLight"
+        android:textSize="14sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveSonglistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/default_fab_margin_small"
+        android:onClick="onClickSaveSonglistButton"
+        app:backgroundTint="@color/hikariLight"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/icon_normal_save" />
+
+    <TextView
+        android:id="@+id/textSave"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/default_text_margin"
+        android:layout_marginBottom="@dimen/default_fab_margin_small"
+        android:gravity="center_vertical|end"
+        android:text="@string/text_save_button"
+        android:textAlignment="gravity"
+        android:textColor="@color/hikariLight"
+        android:textSize="14sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/default_fab_margin"
+        app:backgroundTint="@color/tairitsuLight"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/icon_normal_expand" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

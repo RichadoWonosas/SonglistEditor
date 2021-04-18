@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/selection_info"
+        app:titleTextColor="@android:color/primary_text_light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_introduction"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptionUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/description_usage"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/tairitsuLight" />
+
+            <TextView
+                android:id="@+id/titleAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_author"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageAuthor"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/info_author"
+                app:srcCompat="@drawable/author" />
+
+            <TextView
+                android:id="@+id/contentAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif"
+                android:text="@string/info_author"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/infoFinishButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="20dp"
+                android:background="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical|end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/selection_finish"
+                android:textColor="@color/tairitsuLight" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

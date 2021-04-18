@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tairitsuLight">#ff9966ff</color>
+    <color name="tairitsuDark">#ff663399</color>
+    <color name="hikariLight">#ff6699ff</color>
+    <color name="hikariDark">#ff336699</color>
+</resources>

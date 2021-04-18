@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSortSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/title_sort_setting"
+        app:titleTextColor="@android:color/primary_text_light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleSortCriterion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/subtitle_sort_criterion"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/choiceCriterion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+
+                <RadioButton
+                    android:id="@+id/choiceById"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:buttonTint="@color/tairitsuLight"
+                    android:text="@string/item_songid" />
+
+                <RadioButton
+                    android:id="@+id/choiceByDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:buttonTint="@color/tairitsuLight"
+                    android:text="@string/item_date" />
+
+                <RadioButton
+                    android:id="@+id/choiceByVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:buttonTint="@color/tairitsuLight"
+                    android:text="@string/item_version" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/tairitsuLight"
+                android:backgroundTint="@color/tairitsuLight"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="20dp"/>
+
+            <TextView
+                android:id="@+id/titleSortOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/subtitle_sort_order"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/choiceOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+
+                <RadioButton
+                    android:id="@+id/choiceByAscending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:buttonTint="@color/tairitsuLight"
+                    android:text="@string/item_ascend" />
+
+                <RadioButton
+                    android:id="@+id/choiceByDescending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:buttonTint="@color/tairitsuLight"
+                    android:text="@string/item_descend" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/finishButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="20dp"
+                android:background="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical|end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/selection_finish"
+                android:textColor="@color/tairitsuLight" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
