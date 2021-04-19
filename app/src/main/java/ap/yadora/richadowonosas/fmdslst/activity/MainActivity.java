@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -105,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 infoDialog.show();
 
                 ((ImageView) infoDialogView.findViewById(R.id.imageAuthor)).setImageResource(R.drawable.author);
+                try {
+                    ((TextView) infoDialogView.findViewById(R.id.descriptionVersion)).setText(getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+                } catch (Exception e) {
+                    ((TextView) infoDialogView.findViewById(R.id.descriptionVersion)).setText("");
+                }
 
                 infoDialogView.findViewById(R.id.infoFinishButton).setOnClickListener(new View.OnClickListener() {
                     @Override

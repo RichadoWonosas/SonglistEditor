@@ -11,7 +11,8 @@ final class SingleContainer {
     public static final int TYPE_PLAIN_TEXT = 0;
     public static final int TYPE_MULTILINE_TEXT = 1;
     public static final int TYPE_INTEGER = 2;
-    public static final int TYPE_DECIMAL = 3;
+    public static final int TYPE_SIGNED = 3;
+    public static final int TYPE_DECIMAL = 4;
 
     private final int type;
     private final View root;
@@ -35,6 +36,8 @@ final class SingleContainer {
                 break;
             case TYPE_INTEGER:
                 content.setInputType(InputType.TYPE_CLASS_NUMBER);
+            case TYPE_SIGNED:
+                content.setInputType(InputType.TYPE_CLASS_NUMBER ^ InputType.TYPE_NUMBER_FLAG_SIGNED);
                 break;
             case TYPE_DECIMAL:
                 content.setInputType(InputType.TYPE_CLASS_NUMBER ^ InputType.TYPE_NUMBER_FLAG_DECIMAL);

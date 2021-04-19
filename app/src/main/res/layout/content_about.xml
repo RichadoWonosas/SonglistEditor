@@ -30,6 +30,41 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/titleVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_info_version"
+                android:textColor="@color/tairitsuLight"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptionVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:lineSpacingExtra="4sp"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/tairitsuLight" />
+
+            <TextView
                 android:id="@+id/titleUsage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

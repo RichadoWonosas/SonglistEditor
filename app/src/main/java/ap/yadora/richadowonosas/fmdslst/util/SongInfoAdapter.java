@@ -78,7 +78,7 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
         songIdString = "(id: " + Songlist.songlist.getSongInfoById(songIds[position]).getId() + ")";
         holder.getSongIdPreview().setText(songIdString);
 
-        File imageFile = new File(SelectSongActivity.SONGS_DIRECTORY, songIds[position] + "/base.jpg");
+        File imageFile = new File(Songlist.songlist.getSonglistFileParent(), songIds[position] + "/base.jpg");
         if (imageFile.canRead()) {
             holder.getSongCoverPreview().setImageURI(Uri.fromFile(imageFile));
         }

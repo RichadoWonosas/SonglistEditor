@@ -20,19 +20,36 @@
         android:inputType="textPersonName"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/editButtonExpandDifficulty"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="45sp"
-            android:backgroundTint="@color/tairitsuLight"
-            android:minHeight="45sp"
-            android:textColor="@android:color/white" />
+            android:layout_height="match_parent" >
 
-        <include
-            android:id="@+id/editAvailable"
-            layout="@layout/content_edit_check"
-            android:layout_width="match_parent"
-            android:layout_height="45sp" />
+            <TextView
+                android:id="@+id/contentDifficulty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/default_song_difficulty"
+                android:textColor="@color/tairitsuLight" />
+
+            <include
+                android:id="@+id/editAvailable"
+                layout="@layout/content_edit_check"
+                android:layout_width="wrap_content"
+                android:layout_height="45sp" />
+
+            <Button
+                android:id="@+id/editButtonExpandDifficulty"
+                android:layout_width="0dp"
+                android:layout_height="45sp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/tairitsuLight"
+                android:drawableEnd="@drawable/icon_normal_collapse"
+                android:lines="1"
+                android:minHeight="45sp"
+                android:textColor="@android:color/white" />
+        </TableRow>
 
         <include
             android:id="@+id/editChartDesigner"

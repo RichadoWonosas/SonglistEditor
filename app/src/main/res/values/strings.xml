@@ -117,4 +117,6 @@
     <string name="info_author" translatable="false">RichadoWonosas</string>
     <string name="title_introduction">Introduction</string>
     <string name="description_usage">This application can read songlist file in the storage and allows operations to its song infos such as editing, creating, importing and exporting, delete, etc. It is recommended to use with ARCFMD application.</string>
+    <string name="default_song_difficulty">Unavailable</string>
+    <string name="title_info_version">Application Version</string>
 </resources>

@@ -111,4 +111,6 @@
     <string name="title_author">作者</string>
     <string name="title_introduction">紹介</string>
     <string name="description_usage">当アプリケーションは、ストレージにあるsonglistファイルの読み込みができ、その中のソングインフォの編集や新規作成、導入導出、削除などの操作もできる。ARCFMDと一緒に使うことを推奨。</string>
+    <string name="default_song_difficulty">利用不可</string>
+    <string name="title_info_version">アプリケーションバージョン</string>
 </resources>

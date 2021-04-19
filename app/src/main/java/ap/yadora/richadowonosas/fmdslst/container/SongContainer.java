@@ -394,7 +394,7 @@ public final class SongContainer {
                 difficulty.setRatingClass(i);
                 difficulty.setChartDesigner(difficulties[i].getChartDesigner().getContent().getText().toString());
                 difficulty.setJacketDesigner(difficulties[i].getJacketDesigner().getContent().getText().toString());
-                difficulty.setRating(new BigInteger(difficulties[i].getRating().getContent().getText().toString()).intValue());
+                difficulty.setRating((difficulties[i].getRating().getContent().getText().length() == 0) ? 0 : (new BigInteger(difficulties[i].getRating().getContent().getText().toString()).intValue()));
                 difficulty.setRatingPlus(difficulties[i].getRatingPlus().getContent().isChecked());
                 difficulty.setJacket_night((difficulties[i].getJacketNight().getContent().getText().length() == 0) ? null : difficulties[i].getJacketNight().getContent().getText().toString());
                 difficulty.setJacketOverride(difficulties[i].getJacketOverride().getContent().isChecked());
