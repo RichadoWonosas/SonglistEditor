@@ -9,6 +9,7 @@ final class DaynightContainer {
     private final View root;
     private final TextView title;
     private final SingleContainer day, night;
+
     public DaynightContainer(View view, int rootId) {
         root = view.findViewById(rootId);
 
@@ -18,6 +19,16 @@ final class DaynightContainer {
 
         day.getTitle().setText(R.string.info_daynight_day);
         night.getTitle().setText(R.string.info_daynight_night);
+    }
+
+    public String[] getDaynightStrings() {
+        return ((day.getContent().getText().length() == 0) &&
+                (night.getContent().getText().length() == 0)) ?
+                null :
+                new String[]{
+                        day.getContent().getText().toString(),
+                        night.getContent().getText().toString()
+                };
     }
 
     public View getRoot() {

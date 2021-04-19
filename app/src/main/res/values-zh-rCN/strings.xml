@@ -10,7 +10,7 @@
     <string name="content_start_scene_title">请选择要使用的songlist文件</string>
     <string name="title_activity_select_song">请选择曲目</string>
     <string name="description_song_icon">这是该曲目的封面。</string>
-    <string name="default_song_title">未知曲目</string>
+    <string name="default_song_title">未设定</string>
     <string name="title_choose_operation">请选择操作</string>
     <string name="selection_back">返回</string>
     <string name="selection_save_and_exit">保存并返回</string>

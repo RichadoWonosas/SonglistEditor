@@ -414,6 +414,10 @@ public final class SongInfo {
     }
 
     public static Localized getLocalizedFromStrings(String[] localizedStrings) {
+        if (localizedStrings == null) {
+            return null;
+        }
+
         Localized result = new Localized();
 
         result.setEn((localizedStrings[LOCALIZED_EN] == null) ? "" : localizedStrings[LOCALIZED_EN]);
@@ -437,6 +441,9 @@ public final class SongInfo {
     }
 
     public static DayNight getDaynightFromStrings(String[] daynightString) {
+        if (daynightString == null) {
+            return null;
+        }
         DayNight result = new DayNight();
         result.setDay((daynightString[DAYNIGHT_DAY] == null) ? "" : daynightString[DAYNIGHT_DAY]);
         result.setNight((daynightString[DAYNIGHT_NIGHT] == null) ? "" : daynightString[DAYNIGHT_NIGHT]);

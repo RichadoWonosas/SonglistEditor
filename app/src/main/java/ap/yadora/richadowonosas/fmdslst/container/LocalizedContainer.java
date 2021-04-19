@@ -6,24 +6,27 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import ap.yadora.richadowonosas.fmdslst.R;
+import ap.yadora.richadowonosas.fmdslst.song.SongInfo;
 
 final class LocalizedContainer {
     private final View root;
     private final Button expandButton;
-    private final TextView title;
+    private final TextView title, contentTitle;
     private final SingleContainer en, ja, zhHans, zhHant, ko;
     private boolean isExpanded;
-    private int partsHeight, textHeight;
-    private final int HEIGHT_PARTS;
+    private int textHeight;
+    private final String defaultTitle;
 
     public LocalizedContainer(View view, int rootId) {
         root = view.findViewById(rootId);
-        HEIGHT_PARTS = (int) root.getResources().getDimension(R.dimen.height_parts);
-        partsHeight = 0;
         textHeight = 0;
+        defaultTitle = root.getContext().getString(R.string.default_song_title);
 
         title = root.findViewById(R.id.editTitleLocalized);
+        contentTitle = root.findViewById(R.id.contentTitle);
         expandButton = root.findViewById(R.id.editButtonExpandLocalized);
         en = new SingleContainer(root, R.id.editEn, SingleContainer.TYPE_MULTILINE_TEXT);
         ja = new SingleContainer(root, R.id.editJa, SingleContainer.TYPE_MULTILINE_TEXT);
@@ -45,17 +48,30 @@ final class LocalizedContainer {
         setHeight(zhHant.getRoot(), textHeight);
         setHeight(ko.getRoot(), textHeight);
 
+        View.OnFocusChangeListener onFocusChangeListener = new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                refresh();
+            }
+        };
+        en.getContent().setOnFocusChangeListener(onFocusChangeListener);
+        ja.getContent().setOnFocusChangeListener(onFocusChangeListener);
+        zhHans.getContent().setOnFocusChangeListener(onFocusChangeListener);
+        zhHant.getContent().setOnFocusChangeListener(onFocusChangeListener);
+        ko.getContent().setOnFocusChangeListener(onFocusChangeListener);
+
         expandButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isExpanded = !isExpanded;
                 if (isExpanded) {
                     expandButton.setText(R.string.selection_collapse);
-                    partsHeight = HEIGHT_PARTS;
+                    expandButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, root.getContext().getDrawable(R.drawable.icon_normal_expand), null);
                     textHeight = ViewGroup.LayoutParams.WRAP_CONTENT;
                 } else {
                     expandButton.setText(R.string.selection_expand);
-                    partsHeight = textHeight = 0;
+                    expandButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, root.getContext().getDrawable(R.drawable.icon_normal_collapse), null);
+                    textHeight = 0;
                 }
 
                 setHeight(en.getRoot(), textHeight);
@@ -71,6 +87,61 @@ final class LocalizedContainer {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         layoutParams.height = height;
         view.setLayoutParams(layoutParams);
+    }
+
+    public void refresh() {
+        contentTitle.setText(getStringToShow());
+    }
+
+    public String[] getLocalizedStrings(boolean allowsNull) {
+        return (allowsNull &&
+                (en.getContent().getText().length() == 0) &&
+                (ja.getContent().getText().length() == 0) &&
+                (zhHans.getContent().getText().length() == 0) &&
+                (zhHant.getContent().getText().length() == 0) &&
+                (ko.getContent().getText().length() == 0)) ?
+                null :
+                new String[]{
+                        en.getContent().getText().toString(),
+                        (ja.getContent().getText().length() == 0) ? null : ja.getContent().getText().toString(),
+                        (zhHans.getContent().getText().length() == 0) ? null : zhHans.getContent().getText().toString(),
+                        (zhHant.getContent().getText().length() == 0) ? null : zhHant.getContent().getText().toString(),
+                        (ko.getContent().getText().length() == 0) ? null : ko.getContent().getText().toString()
+                };
+    }
+
+    private String getStringToShow() {
+        String result = null;
+        String[] localizedStrings = getLocalizedStrings(true);
+        if (localizedStrings == null) {
+            return defaultTitle;
+        }
+        
+        switch (Locale.getDefault().getLanguage()) {
+            case "zh":
+                if (Locale.getDefault().getCountry().equals("CN")) {
+                    result = localizedStrings[SongInfo.LOCALIZED_ZH_HANS];
+                }
+                else {
+                    result = localizedStrings[SongInfo.LOCALIZED_ZH_HANT];
+                }
+                break;
+            case "ko":
+                result = localizedStrings[SongInfo.LOCALIZED_KO];
+                break;
+            case "ja":
+                result = localizedStrings[SongInfo.LOCALIZED_JA];
+                break;
+            case "en":
+                result = localizedStrings[SongInfo.LOCALIZED_EN];
+        }
+        if (result == null) {
+            if ((result = localizedStrings[SongInfo.LOCALIZED_JA]) == null) {
+                result = localizedStrings[SongInfo.LOCALIZED_EN];
+            }
+        }
+
+        return result;
     }
 
     public View getRoot() {

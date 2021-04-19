@@ -10,7 +10,7 @@
     <string name="selection_work_on_default">デフォルトのsonglistファイルを使う</string>
     <string name="title_activity_select_song">曲を選んでください</string>
     <string name="description_song_icon">当曲のカバーでございます。</string>
-    <string name="default_song_title">未知な曲</string>
+    <string name="default_song_title">未設定</string>
     <string name="title_choose_operation">行動を選んでください</string>
     <string name="selection_back">戻る</string>
     <string name="selection_cancel">キャンセル</string>

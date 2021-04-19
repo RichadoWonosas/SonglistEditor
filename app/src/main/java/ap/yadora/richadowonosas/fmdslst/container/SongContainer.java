@@ -81,6 +81,7 @@ public final class SongContainer {
             titleLocalized.getZhHant().getContent().setText(titles[SongInfo.LOCALIZED_ZH_HANT]);
             titleLocalized.getKo().getContent().setText(titles[SongInfo.LOCALIZED_KO]);
             titleLocalized.getTitle().setText(R.string.info_title);
+            titleLocalized.refresh();
         }
         artist.getContent().setText(single.getArtist());
         artist.getTitle().setText(R.string.info_artist);
@@ -92,6 +93,7 @@ public final class SongContainer {
             artistLocalized.getZhHant().getContent().setText(artists[SongInfo.LOCALIZED_ZH_HANT]);
             artistLocalized.getKo().getContent().setText(artists[SongInfo.LOCALIZED_KO]);
             artistLocalized.getTitle().setText(R.string.info_artist_localized);
+            artistLocalized.refresh();
         }
         bpm.getContent().setText(single.getBpm());
         bpm.getTitle().setText(R.string.info_bpm);
@@ -145,6 +147,7 @@ public final class SongContainer {
             source.getZhHant().getContent().setText(sources[SongInfo.LOCALIZED_ZH_HANT]);
             source.getKo().getContent().setText(sources[SongInfo.LOCALIZED_KO]);
             source.getTitle().setText(R.string.info_source);
+            source.refresh();
         }
         sourceCopyright.getContent().setText(single.getSource_copyright());
         sourceCopyright.getTitle().setText(R.string.info_source_copyright);
@@ -313,34 +316,9 @@ public final class SongContainer {
     public SongInfo getSongInfo() {
         SongInfo single = new SongInfo();
         single.setId(id.getContent().getText().toString());
-        single.setTitle_localized(SongInfo.getLocalizedFromStrings(
-                new String[]{
-                        titleLocalized.getEn().getContent().getText().toString(),
-                        (titleLocalized.getJa().getContent().getText().length() == 0) ? null : titleLocalized.getJa().getContent().getText().toString(),
-                        (titleLocalized.getZhHans().getContent().getText().length() == 0) ? null : titleLocalized.getZhHans().getContent().getText().toString(),
-                        (titleLocalized.getZhHant().getContent().getText().length() == 0) ? null : titleLocalized.getZhHant().getContent().getText().toString(),
-                        (titleLocalized.getKo().getContent().getText().length() == 0) ? null : titleLocalized.getKo().getContent().getText().toString()
-                }
-        ));
+        single.setTitle_localized(SongInfo.getLocalizedFromStrings(titleLocalized.getLocalizedStrings(false)));
         single.setArtist(artist.getContent().getText().toString());
-        single.setArtist_localized(
-                (
-                        (artistLocalized.getEn().getContent().getText().length() == 0) &&
-                                (artistLocalized.getJa().getContent().getText().length() == 0) &&
-                                (artistLocalized.getZhHans().getContent().getText().length() == 0) &&
-                                (artistLocalized.getZhHant().getContent().getText().length() == 0) &&
-                                (artistLocalized.getKo().getContent().getText().length() == 0)
-                ) ?
-                        null :
-                        SongInfo.getLocalizedFromStrings(
-                                new String[]{
-                                        artistLocalized.getEn().getContent().getText().toString(),
-                                        (artistLocalized.getJa().getContent().getText().length() == 0) ? null : titleLocalized.getJa().getContent().getText().toString(),
-                                        (artistLocalized.getZhHans().getContent().getText().length() == 0) ? null : titleLocalized.getZhHans().getContent().getText().toString(),
-                                        (artistLocalized.getZhHant().getContent().getText().length() == 0) ? null : titleLocalized.getZhHant().getContent().getText().toString(),
-                                        (artistLocalized.getKo().getContent().getText().length() == 0) ? null : titleLocalized.getKo().getContent().getText().toString()
-                                })
-        );
+        single.setArtist_localized(SongInfo.getLocalizedFromStrings(artistLocalized.getLocalizedStrings(true)));
         single.setBpm(bpm.getContent().getText().toString());
         single.setBpm_base(new BigDecimal(bpmBase.getContent().getText().toString()).doubleValue());
         single.setSet(set.getContent().getText().toString());
@@ -349,42 +327,15 @@ public final class SongContainer {
         single.setAudioPreviewEnd(new BigInteger(audioPreviewEnd.getContent().getText().toString()).intValue());
         single.setSide(side.getSelected());
         single.setBg(bg.getContent().getText().toString());
-        single.setBg_daynight(
-                (
-                        (bgDaynight.getDay().getContent().getText().length() == 0) &&
-                                (bgDaynight.getNight().getContent().getText().length() == 0)
-                ) ?
-                        null :
-                        SongInfo.getDaynightFromStrings(
-                                new String[]{
-                                        bgDaynight.getDay().getContent().getText().toString(),
-                                        bgDaynight.getNight().getContent().getText().toString()
-                                })
-        );
+        single.setBg_daynight(SongInfo.getDaynightFromStrings(bgDaynight.getDaynightStrings()));
         single.setDate(new BigInteger(date.getContent().getText().toString()).longValue());
         single.setVersion(version.getContent().getText().toString());
         single.setWorld_unlock(worldUnlock.getContent().isChecked());
         single.setRemote_dl(remoteDl.getContent().isChecked());
         single.setByd_local_unlock(bydLocalUnlock.getContent().isChecked());
+        single.setSonglist_hidden(songlistHidden.getContent().isChecked());
         single.setNo_pp(noPP.getContent().isChecked());
-        single.setSource(
-                (
-                        (source.getEn().getContent().getText().length() == 0) &&
-                                (source.getJa().getContent().getText().length() == 0) &&
-                                (source.getZhHans().getContent().getText().length() == 0) &&
-                                (source.getZhHant().getContent().getText().length() == 0) &&
-                                (source.getKo().getContent().getText().length() == 0)
-                ) ?
-                        null :
-                        SongInfo.getLocalizedFromStrings(
-                                new String[]{
-                                        source.getEn().getContent().getText().toString(),
-                                        (source.getJa().getContent().getText().length() == 0) ? null : titleLocalized.getJa().getContent().getText().toString(),
-                                        (source.getZhHans().getContent().getText().length() == 0) ? null : titleLocalized.getZhHans().getContent().getText().toString(),
-                                        (source.getZhHant().getContent().getText().length() == 0) ? null : titleLocalized.getZhHant().getContent().getText().toString(),
-                                        (source.getKo().getContent().getText().length() == 0) ? null : titleLocalized.getKo().getContent().getText().toString()
-                                })
-        );
+        single.setSource(SongInfo.getLocalizedFromStrings(source.getLocalizedStrings(true)));
         single.setSource_copyright((sourceCopyright.getContent().getText().length() == 0) ? null : sourceCopyright.getContent().getText().toString());
         int cursor = -1;
         for (int i = 0; i < 4; i++) {

@@ -9,7 +9,7 @@
     <string name="error_explorer_not_found">There is no file explorer in your device!</string>
     <string name="title_activity_select_song">Please select a song</string>
     <string name="description_song_icon">This is the cover of this song</string>
-    <string name="default_song_title">Unknown</string>
+    <string name="default_song_title">Vacant</string>
     <string name="default_song_id" translatable="false">(id: default)</string>
     <string name="title_choose_operation">Please choose an operation</string>
     <string name="selection_back">Back</string>
