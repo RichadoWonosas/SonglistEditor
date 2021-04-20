@@ -49,6 +49,7 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
         String songTitleString = null;
         String songIdString = null;
         String[] songTitles = SongInfo.getLocalizedStrings(Songlist.songlist.getSongInfoById(songIds[position]).getTitle_localized());
+        boolean remoteDl = Songlist.songlist.getSongInfoById(songIds[position]).isRemote_dl();
         switch (Locale.getDefault().getLanguage()) {
             case "zh":
                 if (Locale.getDefault().getCountry().equals("CN")) {
@@ -81,6 +82,17 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
         File imageFile = new File(Songlist.songlist.getSonglistFileParent(), songIds[position] + "/base.jpg");
         if (imageFile.canRead()) {
             holder.getSongCoverPreview().setImageURI(Uri.fromFile(imageFile));
+        } else {
+            if (remoteDl) {
+                imageFile = new File(Songlist.songlist.getSonglistFileParent(), "dl_" + songIds[position] + "/base.jpg");
+                if (imageFile.canRead()) {
+                    holder.getSongCoverPreview().setImageURI(Uri.fromFile(imageFile));
+                } else {
+                    holder.getSongCoverPreview().setImageResource(R.drawable.default_song_cover);
+                }
+            } else {
+                holder.getSongCoverPreview().setImageResource(R.drawable.default_song_cover);
+            }
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

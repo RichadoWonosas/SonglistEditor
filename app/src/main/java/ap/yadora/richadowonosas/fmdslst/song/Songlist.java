@@ -62,7 +62,6 @@ public final class Songlist {
             }
     };
 
-    private MainActivity activity;
     private final ArrayMap<String, SongInfo> songs = new ArrayMap<>();
     private File songlistFile;
 
@@ -283,12 +282,13 @@ public final class Songlist {
         return result;
     }
 
-    public JSONObject toJSONObject() throws JSONException {
+    private JSONObject toJSONObject() throws JSONException {
         JSONObject result = new JSONObject();
         JSONArray songsArray = new JSONArray();
+        String[] sortedSongIds = getSongs(SORT_BY_DATE, true);
 
-        for (int i = 0; i < songs.size(); i++) {
-            songsArray.put(songs.valueAt(i).toJSONObject());
+        for (String songId : sortedSongIds) {
+            songsArray.put(songs.get(songId).toJSONObject());
         }
 
         result.put("songs", songsArray);

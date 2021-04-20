@@ -262,6 +262,7 @@ public class SelectSongActivity extends AppCompatActivity {
                         whiteBack.setAlpha(whiteBackAlpha - 0.06f);
                     }
                 }
+                menuButton.bringToFront();
             }
 
             private float getSpeedAtDistance(float distance) {
