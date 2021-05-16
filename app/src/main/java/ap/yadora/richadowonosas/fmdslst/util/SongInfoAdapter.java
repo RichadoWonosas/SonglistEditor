@@ -1,5 +1,7 @@
 package ap.yadora.richadowonosas.fmdslst.util;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -28,6 +30,8 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
 
     private int sortCriterion;
     private boolean isAscend;
+
+    private int colourTairitsu, colourHikari;
 
     public SongInfoAdapter(int sortFactor, boolean isAscend) {
         this.sortCriterion = sortFactor;
@@ -95,6 +99,19 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
             }
         }
 
+        int colour;
+        switch (Songlist.songlist.getSongInfoById(songIds[position]).getSide()) {
+            default:
+            case 0:
+                colour = colourHikari;
+                break;
+            case 1:
+                colour = colourTairitsu;
+                break;
+        }
+
+        holder.getSideShader().setImageTintList(ColorStateList.valueOf(colour));
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +156,11 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
         return Songlist.songlist.getSongAmount();
     }
 
+    public void bindColour(Context content) {
+        colourTairitsu = content.getResources().getColor(R.color.tairitsuLight);
+        colourHikari = content.getResources().getColor(R.color.hikariLight);
+    }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
@@ -165,6 +187,7 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
         private final ImageView songCoverPreview;
         private final TextView songTitlePreview;
         private final TextView songIdPreview;
+        private final ImageView sideShader;
         private boolean isTouching = false;
 
         public ViewHolder(@NonNull View itemView) {
@@ -173,6 +196,7 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
             songCoverPreview = itemView.findViewById(R.id.songCoverPreview);
             songTitlePreview = itemView.findViewById(R.id.songTitlePreview);
             songIdPreview = itemView.findViewById(R.id.songIdPreview);
+            sideShader = itemView.findViewById(R.id.sideShader);
 
             final Handler handler = new Handler();
             handler.post(new Runnable() {
@@ -208,6 +232,10 @@ public final class SongInfoAdapter extends RecyclerView.Adapter<SongInfoAdapter.
 
         public TextView getSongIdPreview() {
             return songIdPreview;
+        }
+
+        public ImageView getSideShader() {
+            return sideShader;
         }
     }
 }

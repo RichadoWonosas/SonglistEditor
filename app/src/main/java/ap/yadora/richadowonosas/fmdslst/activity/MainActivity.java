@@ -171,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("*/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         startActivityForResult(Intent.createChooser(intent, getResources().getString(R.string.title_choose_songlist)), CODE_FIND_SONGLIST);
-        return;
+    }
+
+    public void onCheckLicense(View view) {
+        startActivity(new Intent(this, LicenseActivity.class));
     }
 }

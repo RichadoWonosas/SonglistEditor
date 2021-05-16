@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.LicenseActivity"
+            android:label="@string/title_license"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
         <activity
             android:name=".activity.SongInfoEditActivity"
             android:label="@string/title_edit_song"
@@ -20,9 +23,10 @@
             android:name=".activity.SelectSongActivity"
             android:label="@string/title_activity_select_song"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MainActivity"
+        <activity
+            android:name=".activity.MainActivity"
             android:label="@string/title_app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

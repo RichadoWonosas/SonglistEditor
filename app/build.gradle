@@ -7,8 +7,8 @@ android {
         applicationId "ap.yadora.richadowonosas.fmdslst"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 4
-        versionName 'v1.0.3'
+        versionCode 5
+        versionName 'v1.0.4'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LicenseActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tairitsuLight"
+        android:backgroundTint="@color/tairitsuLight"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/licenseBackButton"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:backgroundTint="@color/tairitsuLight"
+                android:clickable="true"
+                android:contentDescription="@string/selection_back"
+                android:focusable="true"
+                android:onClick="onClickBackButton"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:theme="@style/Ripple"
+                app:srcCompat="@drawable/icon_normal_back" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarLicense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:theme="?attr/actionBarTheme" />
+
+        </TableRow>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_license" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

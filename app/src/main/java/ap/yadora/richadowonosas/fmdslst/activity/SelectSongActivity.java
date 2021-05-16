@@ -301,6 +301,7 @@ public class SelectSongActivity extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        songInfoAdapter.bindColour(this);
         songInfoAdapter.setOnItemClickListener(new SongInfoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, final int position) {

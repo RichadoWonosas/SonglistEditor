@@ -113,4 +113,7 @@
     <string name="description_usage">本应用能够读入存储空间中的songlist文件，并支持对其曲目信息的编辑、新增、导入、导出、删除等操作。推荐与ARCFMD应用配套使用。</string>
     <string name="default_song_difficulty">未启用</string>
     <string name="title_info_version">应用程序版本</string>
+    <string name="description_side_shader">此遮罩显示该曲目的主题。</string>
+    <string name="selection_check_licence">查看开放源代码许可证书</string>
+    <string name="title_license">开放源代码许可证书</string>
 </resources>

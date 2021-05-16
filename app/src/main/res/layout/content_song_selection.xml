@@ -1,46 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/songPreviewFrame"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:focusable="true"
-    android:gravity="center_vertical"
-    android:paddingStart="4dp"
-    android:paddingTop="2dp"
-    android:paddingEnd="4dp"
-    android:paddingBottom="2dp">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/songCoverPreview"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:contentDescription="@string/description_song_icon"
-        app:srcCompat="@drawable/default_song_cover" />
-
-    <LinearLayout
+    <TableRow
+        android:id="@+id/songPreviewFrame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start|center_vertical"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:baselineAligned="true"
-        android:orientation="vertical">
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="2dp">
 
-        <TextView
-            android:id="@+id/songTitlePreview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:text="@string/default_song_title"
-            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/songCoverPreview"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/description_song_icon"
+            app:srcCompat="@drawable/default_song_cover" />
 
-        <TextView
-            android:id="@+id/songIdPreview"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
-            android:text="@string/default_song_id" />
-    </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:baselineAligned="true"
+            android:orientation="vertical">
 
-</TableRow>
+            <TextView
+                android:id="@+id/songTitlePreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="@string/default_song_title"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/songIdPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="@string/default_song_id" />
+        </LinearLayout>
+
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/sideShader"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:alpha="0.5"
+        android:contentDescription="@string/description_side_shader"
+        android:scaleType="fitEnd"
+        android:tint="@color/tairitsuLight"
+        android:visibility="visible"
+        app:srcCompat="@android:color/white" />
+
+</FrameLayout>

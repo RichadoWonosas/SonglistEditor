@@ -113,4 +113,7 @@
     <string name="description_usage">当アプリケーションは、ストレージにあるsonglistファイルの読み込みができ、その中のソングインフォの編集や新規作成、導入導出、削除などの操作もできる。ARCFMDと一緒に使うことを推奨。</string>
     <string name="default_song_difficulty">利用不可</string>
     <string name="title_info_version">アプリケーションバージョン</string>
+    <string name="description_side_shader">当シェーダーの色はこの曲のテーマを表示する。</string>
+    <string name="selection_check_licence">オープンソースライセンスを確認する</string>
+    <string name="title_license">オープンソースライセンス</string>
 </resources>
